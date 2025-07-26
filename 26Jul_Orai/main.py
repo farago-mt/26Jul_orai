@@ -1,6 +1,26 @@
 import datetime
 import random
 import string
+#----------------------------------------------------még nincs kész----------
+def check_workstatus(input_end_date):
+    #if input_end_date - datetime.datetime.now() < 180:
+        #return True
+    return input_end_date
+#----------------------------------------------------még nincs kész----------
+
+def generate_nationality(input_data: List):
+    return random.choice(input_data)
+
+def generate_work_status_boolean():
+    return random.choice([True, False])
+
+def generate_workstatus_end_date():
+    temp_month = int(random.randint(1,12))
+    temp_year = int(datetime.date.today().strftime("%Y"))
+    temp_year_plus1 = int(temp_year) + 1
+    rand_year = random.choice([temp_year, temp_year_plus1])
+    temp_day = random.randrange(1, calendar.monthrange(rand_year,temp_month)[1])
+    return datetime.date(rand_year,temp_month,temp_day)
 
 def create_user_id(): #string
     alphabet = string.ascii_letters + string.digits
